@@ -1,5 +1,3 @@
-# water-card
-
 # Water Card
 
 `wang_ys121` `water card`  `NFC` `RFID`
@@ -33,8 +31,8 @@
 
 ![](https://raw.githubusercontent.com/wang-ys121/water-card/master/water1.png)
 
->这里控制字段含义是只能通过B密钥进行读写0块数据，后面三块依次。
-方法：
+>这里控制字段含义是只能通过B密钥进行读写0块数据，后面三块依次。方法：
+
 >* 1、克隆：直接PJ读取原卡数据，dump出来一个dump文件（acr122u），然后使用克隆工具，克隆到UID白卡，即复制一张完全一样的卡。
 
 >	- **优点**：不用考虑密钥，简单，容易操作。
