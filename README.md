@@ -1,6 +1,6 @@
 # Water Card
 
-`wang-ys121` `water card`  `NFC` `RFID`
+`wonyoungsen` `water card`  `NFC` `RFID`
 
 ## 说明
 
@@ -13,7 +13,7 @@
 ## 核心密钥及数据分析
 >首先说下，m1卡总共64扇区，每扇区有四块，其中第四块是密钥部分。密钥又分A密钥和B密钥，每块总共32位（16进制），前12位为A密钥，中间8位为控制字段，后12位为B密钥，中间的控制字段标志着此块数据如何读写，具体详细的介绍请自行GG。下面给出此“卡”数据部分介绍，说明下，此“卡”的数据部分是存储在5、6扇区，5扇区为卡ID验证部分（似乎此卡没有什么验证，没有参透值是如何加密的，但是不涉及6扇区数据，所以扇区可以不用考虑），6扇区中是主要的数据部分，如图：
 
-![](https://raw.githubusercontent.com/wang-ys121/water-card/master/water2.png)
+![](https://raw.githubusercontent.com/wonyoungsen/water-card/master/water2.png)
 
 
 
@@ -24,12 +24,12 @@
 
 >第27块是密钥部分，此“卡”是：
 
-![](https://raw.githubusercontent.com/wang-ys121/water-card/master/water3.png)
+![](https://raw.githubusercontent.com/wonyoungsen/water-card/master/water3.png)
 
 >其中控制位是错误的，真实的是下面里面的，0780ff69 ，可能是因为PJ时是根据b密钥出的结果，这个分情况，有时可以出正确的，但数据不对，有时可出数据，但是控制位不对，不知道是软件的问题还是卡的问题。
 控制字段含义：
 
-![](https://raw.githubusercontent.com/wang-ys121/water-card/master/water1.png)
+![](https://raw.githubusercontent.com/wonyoungsen/water-card/master/water1.png)
 
 >这里控制字段含义是只能通过B密钥进行读写0块数据，后面三块依次。方法：
 
